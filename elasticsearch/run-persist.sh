@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# persist data to ~/Documents/doce/elastic/data
+# persist data to ~/Documents/code/elastic/data
 
 docker run \
   --name elasticsearch \
