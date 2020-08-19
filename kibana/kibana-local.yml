@@ -2,5 +2,5 @@
 server.name: mikewest
 server.host: "0"
 server.port: "5601"
-elasticsearch.hosts: [ "http://stories.elasticsearch.int.prod.zignallabs.com:80" ]
+elasticsearch.hosts: [ "http://localhost:9200" ]
 xpack.monitoring.ui.container.elasticsearch.enabled: true

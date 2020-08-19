@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker pull docker.elastic.co/kibana/kibana:7.5.2
+docker pull docker.elastic.co/kibana/kibana:7.7.0
