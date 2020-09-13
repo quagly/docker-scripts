@@ -14,4 +14,6 @@ run-ephemeral.sh
 run-persist.sh
 
 # multinode
+use code/elastic/docker-compose.yml which includes  multinode and kibana
+
 

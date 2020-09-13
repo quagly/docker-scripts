@@ -1,11 +1,7 @@
-# TODO write logs to local volume
-# there is some problem with bind mounting full paths
-# for data storage.  nodes sometimes crash
 version: '3.8'
 services:
-
   es01:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
     container_name: es01
     environment:
       - node.name=es01
@@ -24,9 +20,8 @@ services:
       - 9200:9200
     networks:
       - elastic
-
   es02:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
     container_name: es02
     environment:
       - node.name=es02
@@ -43,9 +38,8 @@ services:
       - data02:/usr/share/elasticsearch/data
     networks:
       - elastic
-
   es03:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
     container_name: es03
     environment:
       - node.name=es03
@@ -60,20 +54,6 @@ services:
         hard: -1
     volumes:
       - data03:/usr/share/elasticsearch/data
-    networks:
-      - elastic
-
-  kibana:
-    depends_on:
-      - es01
-    image: docker.elastic.co/kibana/kibana:7.7.1
-    environment:
-      - SERVER_NAME=kibana
-      - SERVER_HOST=0.0.0.0
-      - ELASTICSEARCH_HOSTS=http://es01:9200
-      - MONITORING_ENABLED=true
-    ports:
-      - 5601:5601
     networks:
       - elastic
 
