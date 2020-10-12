@@ -1,0 +1,27 @@
+version: '3.8'
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  shared:
+    driver: bridge
+
+services:
+  mongo:
+    image: mongo:4.4
+    container_name: scripts-mongodb
+    command: --wiredTigerCacheSizeGB 1.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+    ports:
+      # only using 27017 for now
+      # but including all mongo ports
+      #  https://docs.mongodb.com/manual/reference/default-mongodb-port/
+      - '27017-27019:27017-27019'
+    networks:
+      - shared
+    volumes:
+      - mongo_data:/data/db
