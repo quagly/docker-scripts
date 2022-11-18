@@ -1,6 +1,0 @@
-# Default Kibana configuration for docker target
-server.name: mikewest
-server.host: "0"
-server.port: "5601"
-elasticsearch.hosts: [ "http://stories.elasticsearch.int.staging.zignallabs.com:80" ]
-xpack.monitoring.ui.container.elasticsearch.enabled: true
