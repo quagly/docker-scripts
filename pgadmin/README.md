@@ -1,5 +1,8 @@
 # pgAdmin server mode
 
+pgadmin is now offered as a docker extention.  No scripts required.
+using the same master password as here
+
 docker hub [dpage/pgadmin4](https://hub.docker.com/r/dpage/pgadmin4/)
 
 connect to [pgadmin](http://localhost:9000)

@@ -1,5 +1,4 @@
-#!/usr/local/bin/bash
-
+#!/usr//bin/env bash
 set -euxo pipefail
 
 source .config
